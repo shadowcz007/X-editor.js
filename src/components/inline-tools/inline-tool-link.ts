@@ -24,7 +24,7 @@ export default class LinkInlineTool implements InlineTool {
   /**
    * Title for hover-tooltip
    */
-  public static title: string = 'Link';
+  public static title: string = '超链接';
 
   /**
    * Sanitizer Rule
@@ -127,7 +127,7 @@ export default class LinkInlineTool implements InlineTool {
    */
   public renderActions(): HTMLElement {
     this.nodes.input = document.createElement('input') as HTMLInputElement;
-    this.nodes.input.placeholder = 'Add a link';
+    this.nodes.input.placeholder = '添加超链接';
     this.nodes.input.classList.add(this.CSS.input);
     this.nodes.input.addEventListener('keydown', (event: KeyboardEvent) => {
       if (event.keyCode === this.ENTER_KEY) {

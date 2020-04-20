@@ -448,7 +448,7 @@ export default class InlineToolbar extends Module {
       });
     });
 
-    this.Editor.Tooltip.onHover(this.nodes.conversionToggler, 'Convert to', {
+    this.Editor.Tooltip.onHover(this.nodes.conversionToggler, '切换', {
       placement: 'top',
       hidingDelay: 100,
     });

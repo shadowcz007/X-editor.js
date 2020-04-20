@@ -20,7 +20,7 @@ export default class BoldInlineTool implements InlineTool {
   /**
    * Title for hover-tooltip
    */
-  public static title: string = 'Bold';
+  public static title: string = '加粗';
 
   /**
    * Sanitizer Rule
@@ -36,7 +36,7 @@ export default class BoldInlineTool implements InlineTool {
   /**
    * Native Document's command that uses for Bold
    */
-  private readonly commandName: string = 'bold';
+  private readonly commandName: string = 'Bold';
 
   /**
    * Styles

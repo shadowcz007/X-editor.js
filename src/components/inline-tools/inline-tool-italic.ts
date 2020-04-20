@@ -20,7 +20,7 @@ export default class ItalicInlineTool implements InlineTool {
   /**
    * Title for hover-tooltip
    */
-  public static title: string = 'Italic';
+  public static title: string = '斜体';
 
   /**
    * Sanitizer Rule
@@ -36,7 +36,7 @@ export default class ItalicInlineTool implements InlineTool {
   /**
    * Native Document's command that uses for Italic
    */
-  private readonly commandName: string = 'italic';
+  private readonly commandName: string = 'Italic';
 
   /**
    * Styles

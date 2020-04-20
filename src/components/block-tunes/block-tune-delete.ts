@@ -66,7 +66,7 @@ export default class DeleteTune implements BlockTune {
     /**
      * Enable tooltip module
      */
-    this.api.tooltip.onHover(this.nodes.button, 'Delete');
+    this.api.tooltip.onHover(this.nodes.button, '删除');
 
     return this.nodes.button;
   }

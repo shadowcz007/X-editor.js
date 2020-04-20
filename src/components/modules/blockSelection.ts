@@ -288,7 +288,8 @@ export default class BlockSelection extends Module {
     }
 
     const workingBlock = this.Editor.BlockManager.getBlock(event.target as HTMLElement);
-    const inputs = workingBlock.inputs;
+
+    const inputs = workingBlock ? workingBlock.inputs : [];
 
     /**
      * If Block has more than one editable element allow native selection
@@ -303,6 +304,12 @@ export default class BlockSelection extends Module {
       this.needToSelectAll = true;
       return;
     }
+
+    // if (inputs.length === 0) {
+    //   this.needToSelectAll = true;
+    //   return;
+    // }
+    // console.log(inputs.length, this.readyToBlockSelection, this.needToSelectAll);
 
     if (this.needToSelectAll) {
       /**

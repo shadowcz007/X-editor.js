@@ -7,5 +7,7 @@ Thumbs.db
 
 node_modules/*
 
+/src/components/tools/paragraph/node_modules/*
+
 npm-debug.log
 yarn-error.log

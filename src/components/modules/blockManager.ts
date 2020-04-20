@@ -540,6 +540,7 @@ export default class BlockManager extends Module {
      * If node is Text TextNode
      */
     if (!$.isElement(childNode)) {
+      console.log(childNode);
       childNode = childNode.parentNode;
     }
 

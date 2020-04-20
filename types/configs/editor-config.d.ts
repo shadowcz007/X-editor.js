@@ -72,4 +72,10 @@ export interface EditorConfig {
    * @param {API} api - editor.js api
    */
   onChange?(api: API): void;
+
+  /**
+   * Fires when something will pasted in DOM
+   * 
+   */
+  onPaste?(event: ClipboardEvent): void;
 }

@@ -406,6 +406,8 @@ export default class Paste extends Module {
   private handlePasteEvent = async (event: ClipboardEvent): Promise<void> => {
     const {BlockManager, Toolbar} = this.Editor;
 
+    this.config.onPaste(event);
+    // console.log(BlockManager.currentBlock);
     /** If target is native input or is not Block, use browser behaviour */
     if (
       !BlockManager.currentBlock ||
@@ -422,6 +424,7 @@ export default class Paste extends Module {
     }
 
     event.preventDefault();
+
     this.processDataTransfer(event.clipboardData);
 
     BlockManager.clearFocused();
@@ -538,7 +541,7 @@ export default class Paste extends Module {
           return result;
         }, {});
         const customConfig = Object.assign({}, toolTags, Sanitizer.getInlineToolsConfig(tool));
-
+        // console.log('-content.innerHTML-', toolTags, content.innerHTML);
         content.innerHTML = Sanitizer.clean(content.innerHTML, customConfig);
 
         const event = this.composePasteEvent('tag', {

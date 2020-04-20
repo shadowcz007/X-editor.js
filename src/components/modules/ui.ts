@@ -365,7 +365,7 @@ export default class UI extends Module {
     const keyDownOnEditor = (event.target as HTMLElement).closest(`.${this.CSS.editorWrapper}`);
     const {currentBlock} = this.Editor.BlockManager;
     const isMetaKey = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
-
+    // console.log(isMetaKey);
     /**
      * Ignore keydowns on editor and meta keys
      */
@@ -529,8 +529,10 @@ export default class UI extends Module {
     if (clickedNode === this.nodes.redactor) {
       const clientX = event instanceof MouseEvent ? event.clientX : event.touches[0].clientX;
       const clientY = event instanceof MouseEvent ? event.clientY : event.touches[0].clientY;
-
       clickedNode = document.elementFromPoint(clientX, clientY) as HTMLElement;
+      // If click was still fired is on Editor`s wrapper
+      if (clickedNode === this.nodes.redactor) { return; }
+
     }
 
     /**
@@ -550,6 +552,7 @@ export default class UI extends Module {
       /**
        * If clicked outside first-level Blocks and it is not RectSelection, set Caret to the last empty Block
        */
+      // console.log(this.Editor.RectangleSelection.isRectActivated());
       if (!this.Editor.RectangleSelection.isRectActivated()) {
         this.Editor.Caret.setToTheLastBlock();
       }
