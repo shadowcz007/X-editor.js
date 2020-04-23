@@ -173,6 +173,7 @@ export default class InlineToolbar extends Module {
    *                                  Avoid to use it just for closing IT, better call .close() clearly.
    */
   public tryToShow(needToClose: boolean = false): void {
+
     if (!this.allowedToShow()) {
       if (needToClose) {
         this.close();
@@ -320,7 +321,7 @@ export default class InlineToolbar extends Module {
     const tagsConflictsWithSelection = ['IMG', 'INPUT'];
     const currentSelection = SelectionUtils.get();
     const selectedText = SelectionUtils.text;
-
+    // console.log(currentSelection, selectedText);
     // old browsers
     if (!currentSelection || !currentSelection.anchorNode) {
       return false;

@@ -634,6 +634,14 @@ export default class UI extends Module {
     const focusedElement = Selection.anchorElement as Element;
 
     /**
+     * if focusedElement.tagName == 'A' , add short-url
+     */
+    // console.log(focusedElement.tagName == 'A', focusedElement.tagName);
+    if (focusedElement && focusedElement.tagName === 'A') {
+      const shortUrl = focusedElement.getAttribute('href').replace(/https?\:\/\//ig, '');
+      focusedElement.setAttribute('short-url', shortUrl);
+    }
+    /**
      * Event can be fired on clicks at the Editor elements, for example, at the Inline Toolbar
      * We need to skip such firings
      */

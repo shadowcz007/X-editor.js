@@ -158,7 +158,7 @@ export default class LinkInlineTool implements InlineTool {
         this.selection.removeFakeBackground();
       }
       const parentAnchor = this.selection.findParentTag('A');
-
+      // console.log(parentAnchor);
       /**
        * Unlink icon pressed
        */
@@ -361,16 +361,13 @@ export default class LinkInlineTool implements InlineTool {
    * @param {string} link - "href" value
    */
   private insertLink(link: string): void {
-
     /**
      * Edit all link, not selected part
      */
     const anchorTag = this.selection.findParentTag('A');
-
     if (anchorTag) {
       this.selection.expandToTag(anchorTag);
     }
-
     document.execCommand(this.commandLink, false, link);
   }
 

@@ -51,24 +51,26 @@
     }
     a {
         cursor: pointer;
-        color: #2196F3;
+        color: #2196f3;
         text-decoration: none;
         padding-bottom: 1px;
-        border-bottom: 1px dotted #2196F3;
+        border-bottom: 1px dotted #2196f3;
         font-weight: 500;
+        padding-top: 0;
+        padding-left: 6px;
+        padding-right: 6px;
         &:hover {
-            background-color: #f1f1f1;
+            border-top: 12px solid #9E9E9E;
             content: attr(href);
         }
         &::before {
-            content: attr(href);
+            content: attr(short-url);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             width: 128px;
-            /* display: flex; */
-            margin-top: -12px;
-            color: #b6daf6;
+            margin-top: -16px;
+            color: #fff;
             font-size: 12px;
             position: absolute;
             font-weight: 200;
