@@ -266,6 +266,7 @@ export default class BlockManager extends Module {
 
     try {
       block.call(BlockToolAPI.ON_PASTE, pasteEvent);
+      this.Editor.InlineToolbar.close();
     } catch (e) {
       _.log(`${toolName}: onPaste callback call is failed`, 'error', e);
     }
