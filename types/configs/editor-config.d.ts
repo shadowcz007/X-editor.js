@@ -78,4 +78,7 @@ export interface EditorConfig {
    * 
    */
   onPaste?(event: ClipboardEvent): void;
+
+  /**/
+  onClick?():void;
 }

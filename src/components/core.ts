@@ -185,6 +185,7 @@ export default class Core {
     this.config.onReady = this.config.onReady || (() => {});
     this.config.onChange = this.config.onChange || (() => {});
     this.config.onPaste = this.config.onPaste || (() => {});
+    this.config.onClick = this.config.onClick || (() => {});
 
     /**
      * Initialize Blocks to pass data to the Renderer
